@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\7f0bd93eb7452b54ccea8aab7386fd27\\transformed\\appcompat-1.2.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}
