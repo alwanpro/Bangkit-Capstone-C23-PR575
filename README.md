@@ -1,2 +1,8 @@
-# Bangkit-Capstone-C23-PR575
-Repository CC for Bangkit Capstone Project C23-PR575
+## How to run
+
+1. Install NodeJS, Yarn, and postgresql
+2. Create new database inside postgresql named `nutriku-dev`
+3. Execute SQL script inside `configs`
+4. Copy environment variables into `.env`
+5. Install dependencies with `yarn install`
+6. Run the server `yarn start`
