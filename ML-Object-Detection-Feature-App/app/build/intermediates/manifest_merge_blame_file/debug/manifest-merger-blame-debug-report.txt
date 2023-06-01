@@ -45,7 +45,7 @@
 31-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:17:9-53
 32        <activity android:name="org.tensorflow.codelabs.objectdetection.MainActivity" >
 32-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:18:9-24:20
-32-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:18:19-86
+32-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:18:19-47
 33            <intent-filter>
 33-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:19:13-23:29
 34                <action android:name="android.intent.action.MAIN" />
