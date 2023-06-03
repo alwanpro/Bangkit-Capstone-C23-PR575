@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import cryptoJs from 'crypto-js';
-import { Cheerio } from 'cheerio';
+import Cheerio from 'cheerio';
 
 const { HmacSHA1 } = cryptoJs;
 
