@@ -5,20 +5,26 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.FabPosition
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
+import androidx.compose.material.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.myjetpackapplication.R
 import com.example.nutriku.component.BottomBar
 import com.example.nutriku.navigation.Screen
+import com.example.nutriku.screen.LoginScreen
 import com.example.nutriku.ui.theme.NutrikuTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,8 +50,21 @@ fun NutrikuApp(
     navController: NavHostController = rememberNavController()
 ) {
     Scaffold(
-        bottomBar = { BottomBar(navController) },
-        modifier = modifier
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = { /*TODO*/ },
+                backgroundColor = MaterialTheme.colorScheme.primary,
+            ) {
+                Icon(
+                    painter = painterResource(R.drawable.ic_scan),
+                    contentDescription = "Scan",
+                )
+            }
+        },
+        floatingActionButtonPosition = FabPosition.Center,
+        isFloatingActionButtonDocked = true,
+        bottomBar = { BottomBar(/*navController*/) },
+        modifier = modifier,
     ) { innerPadding ->
         NavHost(
             navController = navController,
@@ -53,7 +72,7 @@ fun NutrikuApp(
             modifier = modifier.padding(innerPadding),
         ) {
             composable(Screen.Home.route) {
-                //HomeScreen()
+                LoginScreen()
             }
             composable(Screen.Profile.route) {
                 // ProfileScreen()
