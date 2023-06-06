@@ -1,35 +1,35 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-v28/values-v28.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\1bef6cae12af973827a7b8232e8123d4\\transformed\\material-1.3.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\45a25dc0d40282ec8c633fd3783e6b3c\\transformed\\material-1.5.0\\res\\values-v28\\values-v28.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,143,231,319,407,494,581,668",
-                        "endColumns": "87,87,87,87,86,86,86,86",
-                        "endOffsets": "138,226,314,402,489,576,663,750"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,248,343,441,529,617,705,793,880,967,1054",
+                        "endColumns": "97,94,94,97,87,87,87,87,86,86,86,86",
+                        "endOffsets": "148,243,338,436,524,612,700,788,875,962,1049,1136"
                     }
                 },
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\7f0bd93eb7452b54ccea8aab7386fd27\\transformed\\appcompat-1.2.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\4a7fa38cd9dead3db70a4602967dad35\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,447",
+                        "startOffsets": "55,130,217,397",
                         "endLines": "2,3,7,11",
                         "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,442,684"
+                        "endOffsets": "125,212,392,584"
                     },
                     "to": {
-                        "startLines": "10,11,12,16",
+                        "startLines": "14,15,16,20",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "755,830,917,1097",
-                        "endLines": "10,11,15,19",
+                        "startOffsets": "1141,1216,1303,1483",
+                        "endLines": "14,15,19,23",
                         "endColumns": "74,86,12,12",
-                        "endOffsets": "825,912,1092,1284"
+                        "endOffsets": "1211,1298,1478,1670"
                     }
                 }
             ]

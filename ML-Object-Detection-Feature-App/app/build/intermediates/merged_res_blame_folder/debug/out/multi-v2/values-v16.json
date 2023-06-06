@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-v16/values-v16.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\0a92b1b8722a4cb823c5a0b7033dbc1a\\transformed\\core-1.3.2\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\7f0bd93eb7452b54ccea8aab7386fd27\\transformed\\appcompat-1.2.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\4a7fa38cd9dead3db70a4602967dad35\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\dfce9af0080846d7416ae36c0a297fb1\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

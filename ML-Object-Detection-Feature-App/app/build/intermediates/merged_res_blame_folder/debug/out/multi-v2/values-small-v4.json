@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\1bef6cae12af973827a7b8232e8123d4\\transformed\\material-1.3.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\45a25dc0d40282ec8c633fd3783e6b3c\\transformed\\material-1.5.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

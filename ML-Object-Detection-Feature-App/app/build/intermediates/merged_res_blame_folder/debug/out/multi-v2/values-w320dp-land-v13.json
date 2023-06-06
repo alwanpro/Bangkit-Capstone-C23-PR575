@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\1bef6cae12af973827a7b8232e8123d4\\transformed\\material-1.3.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\45a25dc0d40282ec8c633fd3783e6b3c\\transformed\\material-1.5.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,110,172",
-                        "endColumns": "54,61,51",
-                        "endOffsets": "105,167,219"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,110",
+                        "endColumns": "54,61",
+                        "endOffsets": "105,167"
                     }
                 }
             ]

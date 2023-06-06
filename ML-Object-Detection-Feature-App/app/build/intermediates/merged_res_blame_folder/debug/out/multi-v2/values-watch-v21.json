@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\7f0bd93eb7452b54ccea8aab7386fd27\\transformed\\appcompat-1.2.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\4a7fa38cd9dead3db70a4602967dad35\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

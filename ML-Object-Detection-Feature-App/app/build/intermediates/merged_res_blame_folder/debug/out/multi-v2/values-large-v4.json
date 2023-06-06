@@ -1,27 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.codelabs.objectdetection.app-mergeDebugResources-14:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.nutriku.scan_nutriku_noncompose.app-mergeDebugResources-30:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\1bef6cae12af973827a7b8232e8123d4\\transformed\\material-1.3.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\45a25dc0d40282ec8c633fd3783e6b3c\\transformed\\material-1.5.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,177",
-                        "endColumns": "121,133",
-                        "endOffsets": "172,306"
+                        "startLines": "2,3,4,10",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,177,311,752",
+                        "endLines": "2,3,9,15",
+                        "endColumns": "121,133,10,10",
+                        "endOffsets": "172,306,747,1190"
                     },
                     "to": {
-                        "startLines": "11,12",
-                        "startColumns": "4,4",
-                        "startOffsets": "752,874",
-                        "endColumns": "121,133",
-                        "endOffsets": "869,1003"
+                        "startLines": "11,12,13,19",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "752,874,1008,1449",
+                        "endLines": "11,12,18,24",
+                        "endColumns": "121,133,10,10",
+                        "endOffsets": "869,1003,1444,1887"
                     }
                 },
                 {
-                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\7f0bd93eb7452b54ccea8aab7386fd27\\transformed\\appcompat-1.2.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\ikram\\.gradle\\caches\\transforms-3\\4a7fa38cd9dead3db70a4602967dad35\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

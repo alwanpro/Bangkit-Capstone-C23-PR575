@@ -1,86 +1,98 @@
 [
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable_img_meal_one.jpg.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\drawable\\img_meal_one.jpg"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable_ic_camera.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\drawable\\ic_camera.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable_round_camera_24.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable\\round_camera_24.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable_baseline_flip_camera_android_24.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable\\baseline_flip_camera_android_24.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-16:/layout_activity_main.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-18:/layout/activity_main.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\layout_activity_select.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\layout\\activity_select.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable_baseline_flash_on_24.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable\\baseline_flash_on_24.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\xml_file_paths.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\xml\\file_paths.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\layout_activity_camera.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\layout\\activity_camera.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-pngs-11:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable_img_meal_two.jpg.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\drawable\\img_meal_two.jpg"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable_baseline_flash_off_24.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable\\baseline_flash_off_24.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\layout\\activity_main.xml"
+        "merged": "com.nutriku.scan_nutriku_noncompose.app-merged_res-32:/layout_activity_select.xml.flat",
+        "source": "com.nutriku.scan_nutriku_noncompose.app-main-34:/layout/activity_select.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\layout_activity_scanresult.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\layout\\activity_scanresult.xml"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-merged_res-16:\\drawable_img_meal_three.jpg.flat",
-        "source": "C:\\Users\\ikram\\.gradle\\daemon\\7.4\\org.tensorflow.codelabs.objectdetection.app-main-18:\\drawable\\img_meal_three.jpg"
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-merged_res-32:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\ikram\\.gradle\\daemon\\8.0\\com.nutriku.scan_nutriku_noncompose.app-main-34:\\xml\\data_extraction_rules.xml"
     }
 ]

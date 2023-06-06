@@ -1,80 +1,148 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.tensorflow.codelabs.objectdetection"
+3    package="com.nutriku.scan_nutriku_noncompose"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="23"
-8-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml
-9        android:targetSdkVersion="30" />
-9-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml
+8        android:minSdkVersion="24"
+8-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml
 10
-11    <queries>
-11-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:5:5-9:15
-12        <intent>
-12-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:6:9-8:18
-13            <action android:name="android.media.action.IMAGE_CAPTURE" />
-13-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:7:13-73
-13-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:7:21-70
-14        </intent>
-15    </queries>
-16
-17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11    <!-- <uses-feature -->
+12    <!-- android:name="android.hardware.camera" -->
+13    <!-- android:required="false" /> -->
+14
+15
+16    <!-- <uses-permission android:name="android.hardware.camera.any" /> -->
+17    <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
+18    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" -->
+19    <!-- android:maxSdkVersion="28"/> -->
 20
-21    <application
-21-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:11:5-35:19
-22        android:allowBackup="true"
-22-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:12:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.3.2] C:\Users\ikram\.gradle\caches\transforms-3\0a92b1b8722a4cb823c5a0b7033dbc1a\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:extractNativeLibs="false"
-26        android:icon="@mipmap/ic_launcher"
-26-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:13:9-43
-27        android:label="@string/app_name"
-27-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:14:9-41
-28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:15:9-54
-29        android:supportsRtl="true"
-29-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:16:9-35
-30        android:testOnly="true"
-31        android:theme="@style/Theme.ObjectDetection" >
-31-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:17:9-53
-32        <activity android:name="org.tensorflow.codelabs.objectdetection.MainActivity" >
-32-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:18:9-24:20
-32-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:18:19-47
-33            <intent-filter>
-33-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:19:13-23:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:20:17-69
-34-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:20:25-66
+21    <uses-feature android:name="android.hardware.camera" />
+21-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:14:5-60
+21-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:14:19-57
+22
+23    <uses-permission android:name="android.permission.CAMERA" />
+23-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:16:5-65
+23-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:16:22-62
+24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+24-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:17:5-80
+24-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:17:22-77
+25    <uses-permission
+25-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:18:5-20:38
+26        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+26-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:19:9-65
+27        android:maxSdkVersion="18" />
+27-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:20:9-35
+28
+29    <permission
+29-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+30        android:name="com.nutriku.scan_nutriku_noncompose.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+30-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+31        android:protectionLevel="signature" />
+31-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+32
+33    <uses-permission android:name="com.nutriku.scan_nutriku_noncompose.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+33-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+33-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+34    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:22:17-77
-36-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:22:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <provider
-40-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:26:9-34:20
-41            android:name="androidx.core.content.FileProvider"
-41-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:27:13-62
-42            android:authorities="org.tensorflow.codelabs.objectdetection.fileprovider"
-42-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:28:13-87
-43            android:exported="false"
-43-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:29:13-37
-44            android:grantUriPermissions="true" >
-44-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:30:13-47
-45            <meta-data
-45-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:31:13-33:54
-46                android:name="android.support.FILE_PROVIDER_PATHS"
-46-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:32:17-67
-47                android:resource="@xml/file_paths" />
-47-->D:\Nutriku\app\odml-pathways-main\object-detection\codelab2\android\final\app\src\main\AndroidManifest.xml:33:17-51
-48        </provider>
-49    </application>
-50
-51</manifest>
+36    <application
+36-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:22:5-50:19
+37        android:allowBackup="true"
+37-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:23:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.9.0] C:\Users\ikram\.gradle\caches\transforms-3\dfce9af0080846d7416ae36c0a297fb1\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+39        android:dataExtractionRules="@xml/data_extraction_rules"
+39-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:24:9-65
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:fullBackupContent="@xml/backup_rules"
+42-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:25:9-54
+43        android:icon="@mipmap/ic_launcher"
+43-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:26:9-43
+44        android:label="@string/app_name"
+44-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:27:9-41
+45        android:roundIcon="@mipmap/ic_launcher_round"
+45-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:28:9-54
+46        android:supportsRtl="true"
+46-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:29:9-35
+47        android:testOnly="true"
+48        android:theme="@style/Theme.Scan_Nutriku_NonCompose" >
+48-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:30:9-61
+49        <activity
+49-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:33:9-36:45
+50            android:name="com.nutriku.scan_nutriku_noncompose.scan.CameraActivity"
+50-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:34:13-48
+51            android:exported="false"
+51-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:35:13-37
+52            android:label="CameraActivity" />
+52-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:36:13-43
+53        <activity
+53-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:37:9-40:49
+54            android:name="com.nutriku.scan_nutriku_noncompose.scan.ScanResultActivity"
+54-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:38:13-52
+55            android:exported="false"
+55-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:39:13-37
+56            android:label="ScanResultActivity" />
+56-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:40:13-47
+57        <activity
+57-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:41:9-49:20
+58            android:name="com.nutriku.scan_nutriku_noncompose.SelectActivity"
+58-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:42:13-43
+59            android:exported="true" >
+59-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:43:13-36
+60            <intent-filter>
+60-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:44:13-48:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:45:17-69
+61-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:45:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:47:17-77
+63-->C:\Users\ikram\AndroidStudioProjects\Scan_Nutriku_NonCompose\app\src\main\AndroidManifest.xml:47:27-74
+64            </intent-filter>
+65        </activity>
+66
+67        <service
+67-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:24:9-33:19
+68            android:name="androidx.camera.core.impl.MetadataHolderService"
+68-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:25:13-75
+69            android:enabled="false"
+69-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:26:13-36
+70            android:exported="false" >
+70-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:27:13-37
+71            <meta-data
+71-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:30:13-32:89
+72                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+72-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:31:17-103
+73                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+73-->[androidx.camera:camera-camera2:1.2.3] C:\Users\ikram\.gradle\caches\transforms-3\71c3d8137e45176bb1073f4796c71e63\transformed\camera-camera2-1.2.3\AndroidManifest.xml:32:17-86
+74        </service>
+75
+76        <provider
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+77            android:name="androidx.startup.InitializationProvider"
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+78            android:authorities="com.nutriku.scan_nutriku_noncompose.androidx-startup"
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+79            android:exported="false" >
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+80            <meta-data
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+82                android:value="androidx.startup" />
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ikram\.gradle\caches\transforms-3\464b8e72a3f5efe25958496ff1dd79b2\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+83            <meta-data
+83-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ikram\.gradle\caches\transforms-3\cbb87ebfa6d23aa2c1756b75c0c41ccc\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+84-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ikram\.gradle\caches\transforms-3\cbb87ebfa6d23aa2c1756b75c0c41ccc\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+85                android:value="androidx.startup" />
+85-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ikram\.gradle\caches\transforms-3\cbb87ebfa6d23aa2c1756b75c0c41ccc\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+86        </provider>
+87    </application>
+88
+89</manifest>
