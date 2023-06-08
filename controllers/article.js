@@ -23,6 +23,18 @@ const articles = [
     body: 'https://storage.googleapis.com/article-nutriku/Dampak%20dan%20Cara%20Menghindari%20Konsumsi%20Gula%20Berlebihan/Dampak%20dan%20cara%20menghindari%20konsumsi%20gula%20berlebihan.txt',
     img: 'https://storage.googleapis.com/article-nutriku/Dampak%20dan%20Cara%20Menghindari%20Konsumsi%20Gula%20Berlebihan/Img-Dampak%20dan%20cara%20menghindari%20konsumsi%20gula%20berlebihan.jpg'
   },
+  {
+    id: '5',
+    title: 'Menjaga kesehatan tulang dan sendi',
+    body: 'https://storage.googleapis.com/article-nutriku/Menjaga%20Kesehatan%20Tulang%20dan%20Sendi/Menjaga%20kesehatan%20tulang%20dan%20sendi.txt',
+    img: 'https://storage.googleapis.com/article-nutriku/Menjaga%20Kesehatan%20Tulang%20dan%20Sendi/secrets-to-a-long-and-healthy-life.jpg'
+  },
+  {
+    id: '6',
+    title: 'Membangun sistem kekebalan tubuh yang kuat',
+    body: 'https://storage.googleapis.com/article-nutriku/Membangun%20sistem%20kekebalan%20tubuh%20yang%20kuat/Membangun%20Sistem%20Kekebalan%20Tubuh%20yang%20Kuat.txt',
+    img: 'https://storage.googleapis.com/article-nutriku/Membangun%20sistem%20kekebalan%20tubuh%20yang%20kuat/Img-Membangun%20sistem%20kekebalan%20tubuh%20yang%20kuat.jpg'
+  },
 ];
 
 export const getArticles = (req, res) => {
