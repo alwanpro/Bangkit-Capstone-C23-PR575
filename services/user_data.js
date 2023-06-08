@@ -14,3 +14,19 @@ export const createProfile = async (userData) => {
     throw error;
   }
 };
+
+// export const updateProfile = async (userData) => {
+//   const { weight, height, gender, birth_date, activity, target } = userData;
+
+//   try {
+//     const { rows } = await query(
+//       'UPDATE profiles SET weight = $1, height = $2, gender = $3, birth_date = $4, activity = $5, target = $6 RETURNING *',
+//       [weight, height, gender, birth_date, activity, target]
+//     );
+
+//     const updatedProfile = rows[0];
+//     return updatedProfile;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
