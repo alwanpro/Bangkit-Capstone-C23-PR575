@@ -34,12 +34,12 @@ CREATE TABLE IF NOT EXISTS foods (
     id uuid DEFAULT uuid_generate_v4(),
     name VARCHAR(100) NOT NULL,
     food_class VARCHAR(100) UNIQUE,
-    calorie INT NOT NULL,
-    carb INT NOT NULL,
-    protein INT NOT NULL,
-    fat INT NOT NULL,
-    image_url VARCHAR (100) NOT NULL,
-    nutriscore INT NOT NULL,
+    calorie FLOAT NOT NULL,
+    carb FLOAT NOT NULL,
+    protein FLOAT NOT NULL,
+    fat FLOAT NOT NULL,
+    image_url VARCHAR (800) NOT NULL,
+    nutriscore CHAR,
     default_amount INT NOT NULL,
 
     PRIMARY KEY (id)

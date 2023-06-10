@@ -120,13 +120,22 @@ const getFoodByClass = async (foodData) => {
 };
 
 const addConsumption = async (consumptionData) => {
-  const { food_class, user_id, image_url, amount, total_calorie } =
-    consumptionData;
+  const { foodClass, userId, imageUrl, amount } = consumptionData;
 
+  const { rows: foodRows } = await query(
+    'SELECT calorie, default_amount FROM foods WHERE food_class = $1',
+    [foodClass]
+  );
+
+  if (foodRows.length == 0) throw new Error('Food not found');
+
+  const countCalorie = parseFloat(amount) / foodRows[0].default_amount;
+  const totalCalorie = parseFloat(foodRows[0].calorie) * countCalorie;
+  console.log('total', totalCalorie);
   try {
     const { rows } = await query(
       'INSERT INTO consumptions (food_class, user_id, image_url, amount, total_calorie) VALUES ($1, $2, $3, $4, $5) RETURNING id',
-      [food_class, user_id, image_url, amount, total_calorie]
+      [foodClass, userId, imageUrl, amount, totalCalorie]
     );
 
     if (rows.length == 0) return null;
@@ -184,4 +193,13 @@ const todayCalorie = async (user_id) => {
   return rows[0];
 };
 
-export { getHistory, getFoodByClass, addConsumption };
+const getDefaultImage = async (foodClass) => {
+  const { rows } = await query(
+    'SELECT image_url FROM foods WHERE food_class = $1',
+    [foodClass]
+  );
+
+  if (rows.length == 0) return null;
+  return rows[0];
+};
+export { getHistory, getFoodByClass, addConsumption, getDefaultImage };

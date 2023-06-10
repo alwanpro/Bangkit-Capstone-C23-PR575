@@ -13,7 +13,7 @@ export const loginSchema = Joi.object().keys({
 });
 
 export const foodByClassSchema = Joi.object().keys({
-  food_class: Joi.string().required,
+  food_class: Joi.string().required(),
 });
 
 export const addConsumptionSchema = Joi.object().keys({
