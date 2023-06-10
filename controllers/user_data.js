@@ -4,7 +4,7 @@ import { createProfile } from '../services/user_data.js';
 export const createUserData = async (req, res) => {
   const { weight, height, gender, birth_date } = req.body;
 
-  // Menghitung kalori harian berdasarkan data pengguna
+  // Calculate daily calory by user data 
   const target = await calculateDailyCalorie(req.body);
   const weight_category = weightCategory(req.body);
 
