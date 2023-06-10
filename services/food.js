@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import cryptoJs from 'crypto-js';
-import Cheerio from 'cheerio';
+import { query } from '../configs/database.js';
 
 const { HmacSHA1 } = cryptoJs;
 
@@ -108,3 +108,80 @@ export const scrapeFood = async () => {
     },
   };
 };
+
+const getFoodByClass = async (foodData) => {
+  const { food_class } = foodData;
+  const { rows } = await query(
+    'SELECT * FROM foods WHERE food_class = $1 LIMIT 1',
+    [food_class]
+  );
+  if (rows.length == 0) return null;
+  return rows[0];
+};
+
+const addConsumption = async (consumptionData) => {
+  const { food_class, user_id, image_url, amount, total_calorie } =
+    consumptionData;
+
+  try {
+    const { rows } = await query(
+      'INSERT INTO consumptions (food_class, user_id, image_url, amount, total_calorie) VALUES ($1, $2, $3, $4, $5) RETURNING id',
+      [food_class, user_id, image_url, amount, total_calorie]
+    );
+
+    if (rows.length == 0) return null;
+    return rows[0];
+  } catch (error) {
+    throw error;
+  }
+};
+
+const searchFoodByQuery = async (searchData) => {
+  const { query, offset, limit } = searchData;
+};
+
+const getHistory = async (historyData) => {
+  const { offset, limit, fromDate, toDate, user_id } = historyData;
+
+  try {
+    const { rows } = await query(
+      `
+      SELECT DATE_TRUNC('day', created_at) AS date, COUNT(*) AS total_consumptions, SUM(total_calorie) AS sum_calorie, food_class, foods.name, foods.calorie, foods.carb, foods.protein, foods.fat, foods.image_url AS default_image, foods.nutriscore, foods.default_amount, amount, total_calorie
+      FROM consumptions
+      WHERE user_id = $1
+      ${
+        fromDate && toDate
+          ? `AND created_at > $2 AND created_at < $3`
+          : fromDate
+          ? `AND created_at > $2`
+          : toDate
+          ? `AND created_at < $3`
+          : ''
+      }
+      INNER JOIN foods BY food_class = foods.food_class
+      GROUP BY DATE_TRUNC('day', created_at)
+      ORDER BY date DESC
+      ${limit ? 'LIMIT $3' : ''}
+      ${offset ? 'OFFSET $4' : ''};`,
+      [user_id, fromDate, toDate, limit, offset]
+    );
+  } catch (err) {
+    throw err;
+  }
+
+  return rows;
+};
+
+const todayCalorie = async (user_id) => {
+  const now = new Date();
+  const { rows } = await query(
+    'SELECT SUM(total_calorie) as daily_calorie FROM consumptions WHERE user_id = $1 AND created_at = $2',
+    [user_id, now]
+  );
+
+  if (rows.length == 0) return null;
+
+  return rows[0];
+};
+
+export { getHistory, getFoodByClass, addConsumption };

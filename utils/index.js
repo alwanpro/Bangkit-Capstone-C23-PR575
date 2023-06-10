@@ -35,7 +35,7 @@ export const fetchHtml = async (uri, options) => {
 };
 
 //Calculate daily calorie
-export const calculateDailyCalorie = (userData) => {
+export const calculateDailyCalorie = async (userData) => {
   const { weight, height, gender, birth_date } = userData;
 
   const currentDate = new Date();
@@ -43,14 +43,17 @@ export const calculateDailyCalorie = (userData) => {
   const ageInYears = Math.floor(ageInMillis / (1000 * 60 * 60 * 24 * 365.25));
 
   let dailyCalorie;
-  if (gender === '1') {  //male
+  if (gender === '1') {
+    //male
     dailyCalorie = Math.round(10 * weight + 6.25 * height - 5 * ageInYears + 5);
-  } else if (gender === '0') {  //female
-    dailyCalorie = Math.round(10 * weight + 6.25 * height - 5 * ageInYears - 161);
+  } else if (gender === '0') {
+    //female
+    dailyCalorie = Math.round(
+      10 * weight + 6.25 * height - 5 * ageInYears - 161
+    );
   } else {
     dailyCalorie = 0;
   }
 
   return dailyCalorie;
 };
-
