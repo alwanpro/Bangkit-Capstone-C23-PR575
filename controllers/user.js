@@ -126,13 +126,13 @@ export const createUserData = async (req, res) => {
     res.json({
       message: 'create user-data success',
       status: 'success',
-      data: createdProfile
+      data: createdProfile,
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({
       message: 'Failed to create user-data',
-      status: 'error'
+      status: 'error',
     });
   }
 };

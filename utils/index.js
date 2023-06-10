@@ -35,7 +35,7 @@ export const fetchHtml = async (uri, options) => {
 };
 
 //Calculate daily calorie
-export const calculateDailyCalorie = async (userData) => {
+export const calculateDailyCalorie = (userData) => {
   const { weight, height, gender, birth_date } = userData;
 
   const currentDate = new Date();
@@ -56,4 +56,25 @@ export const calculateDailyCalorie = async (userData) => {
   }
 
   return dailyCalorie;
+};
+
+//weight category
+export const weightCategory = (userData) => {
+  const { weight, height } = userData;
+
+  const heightInMeters = height / 100;
+  const calculateBMI = weight / heightInMeters ** 2;
+
+  let weightGroup;
+  if (calculateBMI < 18.5) {
+    weightGroup = 'Underweight';
+  } else if (18.5 <= calculateBMI && calculateBMI < 24.9) {
+    weightGroup = 'Normal';
+  } else if (25.0 <= calculateBMI && calculateBMI < 29.9) {
+    weightGroup = 'Overweight';
+  } else {
+    weightGroup = 'Obese';
+  }
+
+  return weightGroup;
 };

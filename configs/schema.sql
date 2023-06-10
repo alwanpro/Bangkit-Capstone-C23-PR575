@@ -20,8 +20,9 @@ CREATE TABLE IF NOT EXISTS profiles (
     height INT NOT NULL,
     gender INT NOT NULL,
     birth_date DATE NOT NULL,
-    activity VARCHAR (100) NOT NULL,
+    -- activity VARCHAR (100) NOT NULL,
     target VARCHAR (100) NOT NULL,
+    weight_category VARCHAR (100) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 
