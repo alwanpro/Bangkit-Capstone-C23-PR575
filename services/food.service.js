@@ -146,7 +146,7 @@ const searchFoodByQuery = async (reqQuery) => {
   } else {
     const { rows } = await query(
       `SELECT * from foods WHERE name ILIKE $1 LIMIT $1 OFFSET $2`,
-      [`%${q}%`, limit ? limit : 100, page ? page : 1]
+      [`%${q}%`, limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0]
     );
 
     return rows;
@@ -162,14 +162,13 @@ const getHistory = async (historyData) => {
       SELECT DATE_TRUNC('day', created_at) AS date, COUNT(consumptions.id) AS total_consumptions, SUM(total_calorie) AS sum_calorie, consumptions.food_class, foods.name, foods.calorie, foods.carb, foods.protein, foods.fat, foods.image_url AS default_image, foods.nutriscore, foods.default_amount, amount, total_calorie
       FROM consumptions
       WHERE user_id = $1
-      ${
-        fromDate && toDate
-          ? `AND created_at > $2 AND created_at < $3`
-          : fromDate
+      ${fromDate && toDate
+        ? `AND created_at > $2 AND created_at < $3`
+        : fromDate
           ? `AND created_at > $2`
           : toDate
-          ? `AND created_at < $3`
-          : ''
+            ? `AND created_at < $3`
+            : ''
       }
       INNER JOIN foods BY food_class = foods.food_class
       GROUP BY DATE_TRUNC('day', created_at)
@@ -227,7 +226,7 @@ const getUserConsumptions = async (consumptionData) => {
   const { userId, limit, page } = consumptionData;
   const { rows } = await query(
     'SELECT * FROM consumptions JOIN foods ON consumptions.food_class = foods.food_class WHERE consumptions.user_id = $1 ORDER BY consumptions.created_at DESC LIMIT $2 OFFSET $3',
-    [userId, limit ? limit : 100, page ? page : 1]
+    [userId, limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0]
   );
 
   return rows;

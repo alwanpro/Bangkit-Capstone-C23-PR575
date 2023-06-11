@@ -87,7 +87,7 @@ const register = async (req, res) => {
     const userExist = await userService.getUsersByEmail(data.email);
 
     if (!!userExist) {
-      res.status(400).json({
+      return res.status(400).json({
         status: 'error',
         message: 'Duplicated email',
       });
@@ -148,7 +148,10 @@ const createUserData = async (req, res) => {
     return res.status(200).json({
       status: 'success',
       message: 'create user-data success',
-      data: createdProfile,
+      data: {
+        ...createdProfile,
+        target: parseInt(createdProfile.target)
+      },
     });
   } catch (error) {
     if (error?.isJoi) {
@@ -184,7 +187,10 @@ const updateUserData = async (req, res) => {
       return res.status(200).json({
         status: 'success',
         message: 'update user data success',
-        data: updatedProfile,
+        data: {
+          ...updatedProfile,
+          target: parseInt(updatedProfile.target)
+        },
       });
     }
 
