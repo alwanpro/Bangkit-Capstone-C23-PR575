@@ -1,9 +1,9 @@
-import * as foodService from '../services/food.js';
-import { uploadFile } from '../services/storage.js';
+import * as foodService from '../services/food.service.js';
+import { uploadFile } from '../services/storage.service.js';
 import { addConsumptionSchema, foodByClassSchema } from './schema.js';
 import moment from 'moment-timezone';
 
-export const searchFood = async (req, res) => {
+const searchFood = async (req, res) => {
   const query = 'ayam_geprek';
 
   try {
@@ -19,13 +19,33 @@ export const searchFood = async (req, res) => {
 };
 
 const getFoodByClass = async (req, res) => {
-  const data = req.params;
-
   // Validate schema
   try {
+    const data = req.params;
     await foodByClassSchema.validateAsync(data);
+    const food = await foodService.getFoodByClass(data);
+
+    if (!food)
+      return res.status(404).json({
+        status: 'error',
+        message: 'Food not found',
+      });
+
+    return res.status(200).json({
+      status: 'success',
+      message: 'Food found',
+      data: food,
+    });
   } catch (e) {
-    return res.status(422).json({
+    if (e?.isJoi) {
+      return res.status(422).json({
+        status: 'error',
+        message: e.message,
+        errors: e?.details,
+      });
+    }
+    console.error(e);
+    return res.status(400).json({
       status: 'error',
       message: 'Invalid request data',
       errors: e?.details,
@@ -33,37 +53,16 @@ const getFoodByClass = async (req, res) => {
   }
 
   // Fetch to service
-  const food = await foodService.getFoodByClass(data);
-
-  if (!food)
-    return res.status(404).json({
-      status: 'error',
-      message: 'Food not found',
-    });
-
-  return res.status(200).json({
-    status: 'success',
-    message: 'Food found',
-    data: food,
-  });
 };
 
 const addConsumption = async (req, res) => {
-  const data = req.body;
-  const user = req.user;
-
-  // Validate schema
   try {
+    const data = req.body;
+    const user = req.user;
+
+    // Validate schema
     await addConsumptionSchema.validateAsync(data);
-  } catch (err) {
-    return res.status(422).json({
-      status: 'error',
-      message: 'Invalid request data',
-      errors: e?.details,
-    });
-  }
 
-  try {
     let imageUrl = '';
 
     if (req.file) {
@@ -91,8 +90,19 @@ const addConsumption = async (req, res) => {
       data: consumption,
     });
   } catch (err) {
-    console.log(err);
-    return res.sendStatus(400);
+    if (err?.isJoi) {
+      return res.status(422).json({
+        status: 'error',
+        message: err.message,
+        errors: err?.details,
+      });
+    }
+    console.error(err);
+    return res.status(400).json({
+      status: 'error',
+      message: 'Failed to add consumptions',
+      errors: err?.message,
+    });
   }
 };
 
@@ -112,30 +122,46 @@ const getTodayCalorie = async (req, res) => {
       data: todayData,
     });
   } catch (err) {
-    console.log(err);
-    return res.sendStatus(400);
+    console.error(err);
+    return res.status(400).json({
+      status: 'error',
+      message: 'Failed to get today calorie',
+      errors: err?.message,
+    });
   }
 };
 
 const getFoods = async (req, res) => {
-  const query = req.query;
   try {
+    const query = req.query;
     const foods = await foodService.searchFoodByQuery(query);
     return res.status(200).json({
       status: 'success',
       message: 'Foods data fetched',
       data: foods,
+      metadata: {
+        page: req.query.page ?? 1,
+        limit: req.query.limit ?? 100,
+      },
     });
   } catch (err) {
-    console.log(err);
-    return res.sendStatus(400);
+    console.error(err);
+    return res.status(400).json({
+      status: 'error',
+      message: 'Failed to get today calorie',
+      errors: err?.message,
+    });
   }
 };
 
 // todo implement best practice and pagination
 const getConsumptionHistory = async (req, res) => {
   try {
-    const consumptions = await foodService.getUserConsumptions(req.user.userId);
+    const { userId } = req.user;
+    const consumptions = await foodService.getUserConsumptions({
+      ...req.query,
+      userId,
+    });
 
     const history = consumptions.reduce((acc, curr) => {
       const targetTimezone = 'Asia/Bangkok';
@@ -156,14 +182,23 @@ const getConsumptionHistory = async (req, res) => {
       status: 'success',
       message: 'History retrieved',
       data: history,
+      metadata: {
+        page: req.query.page ?? 1,
+        limit: req.query.limit ?? 100,
+      },
     });
   } catch (err) {
-    console.log(err);
-    return res.sendStatus(400);
+    console.error(err);
+    return res.status(400).json({
+      status: 'error',
+      message: 'Failed to get today calorie',
+      errors: err?.message,
+    });
   }
 };
 
 export {
+  searchFood,
   getFoodByClass,
   addConsumption,
   getTodayCalorie,

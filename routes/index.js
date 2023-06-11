@@ -1,8 +1,8 @@
 import express from 'express';
-import userRouter from './user.js';
-import foodRouter from './foods.js';
+import userRouter from './user.route.js';
+import foodRouter from './foods.route.js';
 // import userDataRouter from './user_data.js';
-import articleRouter from './article.js';
+import articleRouter from './article.route.js';
 
 const router = express.Router();
 

@@ -1,14 +1,6 @@
 import qs from 'node:querystring';
 
-export const validateEmail = (email) => {
-  return email;
-};
-
-export const hashPassword = (password) => {
-  return password;
-};
-
-export const fetchHtml = async (uri, options) => {
+const fetchHtml = async (uri, options) => {
   const headers = {
     'cache-control': 'no-cache',
     'user-agent':
@@ -33,7 +25,7 @@ export const fetchHtml = async (uri, options) => {
 };
 
 //Calculate daily calorie
-export const calculateDailyCalorie = async (userData) => {
+const calculateDailyCalorie = async (userData) => {
   const { weight, height, gender, birth_date } = userData;
 
   const currentDate = new Date();
@@ -57,7 +49,7 @@ export const calculateDailyCalorie = async (userData) => {
 };
 
 //weight category
-export const weightCategory = async (userData) => {
+const weightCategory = async (userData) => {
   const { weight, height } = userData;
 
   const heightInMeters = height / 100;
@@ -76,3 +68,5 @@ export const weightCategory = async (userData) => {
 
   return weightGroup;
 };
+
+export { fetchHtml, weightCategory, calculateDailyCalorie };

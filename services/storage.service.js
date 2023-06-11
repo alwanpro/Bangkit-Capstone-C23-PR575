@@ -1,5 +1,4 @@
-import { storage } from '../configs/storage.js';
-import mime from 'mime';
+import { storage } from '../configs/storage.config.js';
 import * as util from 'util';
 
 const BUCKET_NAME = 'food-consumptions';
