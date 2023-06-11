@@ -8,6 +8,9 @@ const foodRouter = express.Router();
 // foodRouter.route('/food').get(foodController.searchFood);
 foodRouter.route('/foods/search').get();
 foodRouter.route('/daily-calorie');
+
+foodRouter.route('/foods').get(authenticateToken, foodController.getFoods);
+
 foodRouter
   .route('/foods/:food_class')
   .get(authenticateToken, foodController.getFoodByClass);
@@ -20,4 +23,11 @@ foodRouter
     foodController.addConsumption
   );
 
+foodRouter
+  .route('/history')
+  .get(authenticateToken, foodController.getConsumptionHistory);
+
+foodRouter
+  .route('/today_calorie')
+  .get(authenticateToken, foodController.getTodayCalorie);
 export default foodRouter;

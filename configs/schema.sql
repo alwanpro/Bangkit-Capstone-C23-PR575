@@ -15,10 +15,10 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS profiles (
     id uuid DEFAULT uuid_generate_v4(),
-    user_id uuid,
+    user_id uuid UNIQUE,
     weight INT NOT NULL,
     height INT NOT NULL,
-    gender INT NOT NULL,
+    gender VARCHAR(10) NOT NULL,
     birth_date DATE NOT NULL,
     -- activity VARCHAR (100) NOT NULL,
     target VARCHAR (100) NOT NULL,
@@ -49,10 +49,10 @@ CREATE TABLE IF NOT EXISTS consumptions (
     id uuid DEFAULT uuid_generate_v4(),
     food_class VARCHAR(100) NOT NULL,
     user_id uuid,
-    image_url VARCHAR(100),
+    image_url VARCHAR(800),
     amount INT NOT NULL,
     total_calorie INT NOT NULL,
-    created_at DATE NOT NULL DEFAULT CURRENT_DATE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
    
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id),

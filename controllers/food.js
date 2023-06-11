@@ -1,6 +1,7 @@
 import * as foodService from '../services/food.js';
 import { uploadFile } from '../services/storage.js';
 import { addConsumptionSchema, foodByClassSchema } from './schema.js';
+import moment from 'moment-timezone';
 
 export const searchFood = async (req, res) => {
   const query = 'ayam_geprek';
@@ -95,4 +96,77 @@ const addConsumption = async (req, res) => {
   }
 };
 
-export { getFoodByClass, addConsumption };
+const getTodayCalorie = async (req, res) => {
+  try {
+    const todayData = await foodService.todayCalorie(req.user.userId);
+
+    if (!todayData) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'User profile not found',
+      });
+    }
+    return res.status(200).json({
+      status: 'success',
+      message: 'Daily calorie',
+      data: todayData,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(400);
+  }
+};
+
+const getFoods = async (req, res) => {
+  const query = req.query;
+  try {
+    const foods = await foodService.searchFoodByQuery(query);
+    return res.status(200).json({
+      status: 'success',
+      message: 'Foods data fetched',
+      data: foods,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(400);
+  }
+};
+
+// todo implement best practice and pagination
+const getConsumptionHistory = async (req, res) => {
+  try {
+    const consumptions = await foodService.getUserConsumptions(req.user.userId);
+
+    const history = consumptions.reduce((acc, curr) => {
+      const targetTimezone = 'Asia/Bangkok';
+      const timestamp = curr.created_at;
+      const utc7Timestamp = moment(timestamp).tz(targetTimezone).format();
+      const date = utc7Timestamp.toString().split('T')[0];
+
+      if (acc[date]) {
+        acc[date].push(curr);
+      } else {
+        acc[date] = [curr];
+      }
+
+      return acc;
+    }, {});
+
+    return res.status(200).json({
+      status: 'success',
+      message: 'History retrieved',
+      data: history,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(400);
+  }
+};
+
+export {
+  getFoodByClass,
+  addConsumption,
+  getTodayCalorie,
+  getFoods,
+  getConsumptionHistory,
+};

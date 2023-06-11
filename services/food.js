@@ -27,17 +27,11 @@ const generateRequestParam = async (rawParams, httpMethod) => {
       return str;
     }, '');
 
-  console.log('sorted', sortedParams);
-
   const encParam = encodeURIComponent(sortedParams);
   const signBaseStr = `${httpMethod}&${encUrl}&${encParam}`;
 
-  console.log('signedstr', signBaseStr);
-
   const oauthSignature = HmacSHA1(signBaseStr, `${FS_SECRET}&`);
   const encText = cryptoJs.enc.Base64.stringify(oauthSignature);
-
-  console.log('signature', encText);
 
   const urlParam = {
     ...rawParams,
@@ -74,8 +68,6 @@ export const searchFatSecret = async (searchQuery) => {
   };
 
   const requestParam = await generateRequestParam(rawParams, 'GET');
-
-  console.log('param', requestParam);
 
   try {
     const response = await fetch(`${FS_API}?${requestParam}`, {
@@ -131,7 +123,6 @@ const addConsumption = async (consumptionData) => {
 
   const countCalorie = parseFloat(amount) / foodRows[0].default_amount;
   const totalCalorie = parseFloat(foodRows[0].calorie) * countCalorie;
-  console.log('total', totalCalorie);
   try {
     const { rows } = await query(
       'INSERT INTO consumptions (food_class, user_id, image_url, amount, total_calorie) VALUES ($1, $2, $3, $4, $5) RETURNING id',
@@ -145,8 +136,21 @@ const addConsumption = async (consumptionData) => {
   }
 };
 
-const searchFoodByQuery = async (searchData) => {
-  const { query, offset, limit } = searchData;
+const searchFoodByQuery = async (reqQuery) => {
+  const { q, offset, limit } = reqQuery;
+
+  if (!q) {
+    // get all foods
+    const { rows } = await query(`SELECT * from foods`, []);
+
+    return rows;
+  } else {
+    const { rows } = await query(`SELECT * from foods WHERE name ILIKE $1`, [
+      `%${q}%`,
+    ]);
+
+    return rows;
+  }
 };
 
 const getHistory = async (historyData) => {
@@ -155,7 +159,7 @@ const getHistory = async (historyData) => {
   try {
     const { rows } = await query(
       `
-      SELECT DATE_TRUNC('day', created_at) AS date, COUNT(*) AS total_consumptions, SUM(total_calorie) AS sum_calorie, food_class, foods.name, foods.calorie, foods.carb, foods.protein, foods.fat, foods.image_url AS default_image, foods.nutriscore, foods.default_amount, amount, total_calorie
+      SELECT DATE_TRUNC('day', created_at) AS date, COUNT(consumptions.id) AS total_consumptions, SUM(total_calorie) AS sum_calorie, consumptions.food_class, foods.name, foods.calorie, foods.carb, foods.protein, foods.fat, foods.image_url AS default_image, foods.nutriscore, foods.default_amount, amount, total_calorie
       FROM consumptions
       WHERE user_id = $1
       ${
@@ -181,16 +185,32 @@ const getHistory = async (historyData) => {
   return rows;
 };
 
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+};
+
 const todayCalorie = async (user_id) => {
   const now = new Date();
-  const { rows } = await query(
-    'SELECT SUM(total_calorie) as daily_calorie FROM consumptions WHERE user_id = $1 AND created_at = $2',
-    [user_id, now]
+  const { rows: dailyCalRows } = await query(
+    'SELECT SUM(total_calorie) as daily_calorie FROM consumptions WHERE user_id = $1 AND DATE(created_at) = $2',
+    [user_id, formatDate(now)]
   );
 
-  if (rows.length == 0) return null;
+  const { rows: targetRows } = await query(
+    'SELECT target FROM profiles WHERE user_id = $1',
+    [user_id]
+  );
 
-  return rows[0];
+  if (targetRows.length == 0) return null;
+
+  return {
+    daily_calorie: parseInt(dailyCalRows[0]?.daily_calorie) || 0,
+    target: parseInt(targetRows[0].target),
+  };
 };
 
 const getDefaultImage = async (foodClass) => {
@@ -202,4 +222,21 @@ const getDefaultImage = async (foodClass) => {
   if (rows.length == 0) return null;
   return rows[0];
 };
-export { getHistory, getFoodByClass, addConsumption, getDefaultImage };
+
+const getUserConsumptions = async (userId) => {
+  const { rows } = await query(
+    'SELECT * FROM consumptions JOIN foods ON consumptions.food_class = foods.food_class WHERE consumptions.user_id = $1 ORDER BY consumptions.created_at DESC',
+    [userId]
+  );
+
+  return rows;
+};
+export {
+  getHistory,
+  getFoodByClass,
+  addConsumption,
+  getDefaultImage,
+  todayCalorie,
+  searchFoodByQuery,
+  getUserConsumptions,
+};

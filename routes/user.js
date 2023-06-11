@@ -4,6 +4,7 @@ import {
   protectedRoutes,
   register,
   createUserData,
+  updateUserData,
 } from '../controllers/user.js';
 import { authenticateToken } from '../middleware/auth.js';
 
@@ -13,5 +14,6 @@ userRouter.route('/login').post(login);
 userRouter.route('/register').post(register);
 userRouter.route('/register').post(register);
 userRouter.route('/user_data').post(authenticateToken, createUserData);
+userRouter.route('/user_data').put(authenticateToken, updateUserData);
 
 export default userRouter;

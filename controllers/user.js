@@ -1,7 +1,12 @@
 import { registerSchema, loginSchema } from './schema.js';
-import { addUser, getUsersByEmail, createProfile } from '../services/user.js';
+import {
+  addUser,
+  getUsersByEmail,
+  createProfile,
+  updateProfile,
+} from '../services/user.js';
 import bcrypt from 'bcrypt';
-import { calculateDailyCalorie } from '../utils/index.js';
+import { calculateDailyCalorie, weightCategory } from '../utils/index.js';
 import { generateToken } from '../middleware/auth.js';
 
 export const protectedRoutes = async (req, res) => {
@@ -106,18 +111,20 @@ export const register = async (req, res) => {
 };
 
 export const createUserData = async (req, res) => {
-  const { weight, height, gender, birth_date, activity } = req.body;
+  const { weight, height, gender, birth_date } = req.body;
 
   // Menghitung kalori harian berdasarkan data pengguna
   const target = await calculateDailyCalorie(req.body);
+  const weight_category = await weightCategory(req.body);
 
   const userData = {
-    weight: weight,
-    height: height,
-    gender: gender,
-    birth_date: birth_date,
-    activity: activity,
-    target: target,
+    weight,
+    height,
+    gender,
+    birth_date,
+    target,
+    userId: req.user.userId,
+    weight_category,
   };
 
   try {
@@ -132,6 +139,38 @@ export const createUserData = async (req, res) => {
     console.error(error);
     res.status(500).json({
       message: 'Failed to create user-data',
+      status: 'error',
+    });
+  }
+};
+
+export const updateUserData = async (req, res) => {
+  const { weight, height } = req.body;
+  const { userId } = req.user;
+
+  try {
+    const updatedProfile = await updateProfile({
+      weight,
+      height,
+      userId,
+    });
+
+    if (updateProfile) {
+      return res.json({
+        message: 'update user data success',
+        status: 'success',
+        data: updatedProfile,
+      });
+    }
+
+    return res.json({
+      message: 'failed to update',
+      status: 'error',
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Failed to update user data',
       status: 'error',
     });
   }
