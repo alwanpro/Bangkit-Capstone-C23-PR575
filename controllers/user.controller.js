@@ -6,7 +6,11 @@ import {
 } from './schema.js';
 import * as userService from '../services/user.service.js';
 import bcrypt from 'bcrypt';
-import { calculateDailyCalorie, weightCategory } from '../utils/index.js';
+import {
+  calculateDailyCalorie,
+  getAge,
+  weightCategory,
+} from '../utils/index.js';
 import { generateToken } from '../middleware/auth.js';
 
 const protectedRoutes = async (req, res) => {
@@ -128,7 +132,7 @@ const createUserData = async (req, res) => {
     await userDataSchema.validateAsync(req.body);
     const { weight, height, gender, birth_date } = req.body;
     // Menghitung kalori harian berdasarkan data pengguna
-    const [target, weight_category] = await Promise.all([
+    const [target, bmi] = await Promise.all([
       calculateDailyCalorie(req.body),
       weightCategory(req.body),
     ]);
@@ -140,7 +144,7 @@ const createUserData = async (req, res) => {
       birth_date,
       target,
       userId: req.user.userId,
-      weight_category,
+      weight_category: bmi.weightGroup,
     };
 
     const createdProfile = await userService.createProfile(userData);
@@ -150,7 +154,7 @@ const createUserData = async (req, res) => {
       message: 'create user-data success',
       data: {
         ...createdProfile,
-        target: parseInt(createdProfile.target)
+        target: parseInt(createdProfile.target),
       },
     });
   } catch (error) {
@@ -189,7 +193,8 @@ const updateUserData = async (req, res) => {
         message: 'update user data success',
         data: {
           ...updatedProfile,
-          target: parseInt(updatedProfile.target)
+          target: parseInt(updatedProfile.target),
+          age: await getAge(updatedProfile.birth_date),
         },
       });
     }
@@ -215,4 +220,75 @@ const updateUserData = async (req, res) => {
   }
 };
 
-export { protectedRoutes, login, register, createUserData, updateUserData };
+const getUserProfile = async (req, res) => {
+  try {
+    const { userId } = req.user;
+
+    const userProfile = await userService.getUserProfile(userId);
+
+    if (userProfile) {
+      return res.status(200).json({
+        status: 'success',
+        message: 'fetch user data success',
+        data: {
+          ...userProfile,
+          age: await getAge(userProfile.birth_date),
+        },
+      });
+    }
+
+    return res.status(400).json({
+      status: 'error',
+      message: 'failed to fetch',
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to fetch user profile',
+      errors: err.message,
+    });
+  }
+};
+
+const getBMI = async (req, res) => {
+  try {
+    const { userId } = req.user;
+
+    const userProfile = await userService.getUserProfile(userId);
+    if (userProfile) {
+      const bmi = await weightCategory(userProfile);
+
+      return res.status(200).json({
+        status: 'success',
+        message: 'fetch bmi success',
+        data: {
+          weight_category: bmi.weightGroup,
+          calculated_bmi: bmi.calculateBMI,
+        },
+      });
+    }
+
+    return res.status(400).json({
+      status: 'error',
+      message: 'failed to fetch',
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to fetch user profile',
+      errors: err.message,
+    });
+  }
+};
+
+export {
+  protectedRoutes,
+  login,
+  register,
+  createUserData,
+  updateUserData,
+  getUserProfile,
+  getBMI,
+};

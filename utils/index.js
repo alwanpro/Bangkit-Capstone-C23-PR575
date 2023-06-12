@@ -66,7 +66,19 @@ const weightCategory = async (userData) => {
     weightGroup = 'Obese';
   }
 
-  return weightGroup;
+  return { weightGroup, calculateBMI };
 };
 
-export { fetchHtml, weightCategory, calculateDailyCalorie };
+const getAge = async (dateString) => {
+  console.log(dateString);
+  let today = new Date();
+  let birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
+
+export { fetchHtml, weightCategory, calculateDailyCalorie, getAge };

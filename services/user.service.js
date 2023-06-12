@@ -71,7 +71,7 @@ const updateProfile = async (newData) => {
 
   const { rows } = await query(
     'UPDATE profiles SET weight = $1, height = $2, target = $3, weight_category = $4 WHERE user_id = $5 RETURNING *',
-    [weight, height, newTarget, newBMI, userId]
+    [weight, height, newTarget, newBMI.weightGroup, userId]
   );
 
   return rows[0];
