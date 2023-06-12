@@ -68,7 +68,7 @@ const addConsumption = async (req, res) => {
     if (req.file) {
       imageUrl = await uploadFile(req.file, user.userId, data.food_class);
     } else {
-      imageUrl = await foodService.getDefaultImage(data.food_class);
+      imageUrl = (await foodService.getDefaultImage(data.food_class)).image_url;
     }
 
     const consumption = await foodService.addConsumption({

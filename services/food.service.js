@@ -138,14 +138,13 @@ const searchFoodByQuery = async (reqQuery) => {
   if (!q) {
     // get all foods
     const { rows } = await query(`SELECT * from foods LIMIT $1 OFFSET $2`, [
-      limit ? limit : 100,
-      page ? page : 1,
+      limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0
     ]);
 
     return rows;
   } else {
     const { rows } = await query(
-      `SELECT * from foods WHERE name ILIKE $1 LIMIT $1 OFFSET $2`,
+      `SELECT * from foods WHERE name ILIKE $1 LIMIT $2 OFFSET $3`,
       [`%${q}%`, limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0]
     );
 
