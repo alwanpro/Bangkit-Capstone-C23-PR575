@@ -226,7 +226,7 @@ const getDefaultImage = async (foodClass) => {
 const getUserConsumptions = async (consumptionData) => {
   const { userId, limit, page } = consumptionData;
   const { rows } = await query(
-    'SELECT * FROM consumptions JOIN foods ON consumptions.food_class = foods.food_class WHERE consumptions.user_id = $1 ORDER BY consumptions.created_at DESC LIMIT $2 OFFSET $3',
+    'SELECT foods.food_class AS food_class, consumptions.user_id AS user_id, consumptions.image_url AS image_url, consumptions.amount AS amount, consumptions.total_calorie AS total_calorie, consumptions.created_at AS created_at, foods.name AS name, foods.calorie AS calorie, foods.carb AS carb, foods.protein AS protein, foods.fat AS fat, foods.nutriscore AS nutriscore, foods.default_amount AS default_amount FROM consumptions JOIN foods ON consumptions.food_class = foods.food_class WHERE consumptions.user_id = $1 ORDER BY consumptions.created_at DESC LIMIT $2 OFFSET $3',
     [userId, limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0]
   );
 
