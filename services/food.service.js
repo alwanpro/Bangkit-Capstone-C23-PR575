@@ -138,7 +138,8 @@ const searchFoodByQuery = async (reqQuery) => {
   if (!q) {
     // get all foods
     const { rows } = await query(`SELECT * from foods LIMIT $1 OFFSET $2`, [
-      limit ? limit : 100, page ? (page - 1) * (limit || 100) : 0
+      limit ? limit : 100,
+      page ? (page - 1) * (limit || 100) : 0,
     ]);
 
     return rows;
@@ -161,13 +162,14 @@ const getHistory = async (historyData) => {
       SELECT DATE_TRUNC('day', created_at) AS date, COUNT(consumptions.id) AS total_consumptions, SUM(total_calorie) AS sum_calorie, consumptions.food_class, foods.name, foods.calorie, foods.carb, foods.protein, foods.fat, foods.image_url AS default_image, foods.nutriscore, foods.default_amount, amount, total_calorie
       FROM consumptions
       WHERE user_id = $1
-      ${fromDate && toDate
-        ? `AND created_at > $2 AND created_at < $3`
-        : fromDate
+      ${
+        fromDate && toDate
+          ? `AND created_at > $2 AND created_at < $3`
+          : fromDate
           ? `AND created_at > $2`
           : toDate
-            ? `AND created_at < $3`
-            : ''
+          ? `AND created_at < $3`
+          : ''
       }
       INNER JOIN foods BY food_class = foods.food_class
       GROUP BY DATE_TRUNC('day', created_at)

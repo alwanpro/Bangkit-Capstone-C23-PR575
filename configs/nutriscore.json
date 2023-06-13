@@ -1,0 +1,22 @@
+[
+  {
+    "food_class": "",
+    "energy": 0,
+    "fibers": 4,
+    "fruit_percentage": 60,
+    "proteins": 2,
+    "saturated_fats": 2,
+    "sodium": 500,
+    "sugar": 10
+  },
+  {
+    "food_class": "",
+    "energy": 0,
+    "fibers": 4,
+    "fruit_percentage": 60,
+    "proteins": 2,
+    "saturated_fats": 2,
+    "sodium": 500,
+    "sugar": 10
+  }
+]
