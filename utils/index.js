@@ -1,4 +1,5 @@
 import qs from 'node:querystring';
+import { nutriScore } from "nutri-score";
 
 const fetchHtml = async (uri, options) => {
   const headers = {
@@ -81,4 +82,19 @@ const getAge = async (dateString) => {
   return age;
 };
 
-export { fetchHtml, weightCategory, calculateDailyCalorie, getAge };
+const nutriScoreResult = nutriScore.calculateClass(
+  {
+    energy: 0,
+    fibers: 4,
+    fruit_percentage: 60,
+    proteins: 2,
+    saturated_fats: 2,
+    sodium: 500,
+    sugar: 10
+  },
+  "solid"
+);
+
+console.log(nutriScoreResult);
+
+export { fetchHtml, weightCategory, calculateDailyCalorie, getAge, nutriScoreResult };
