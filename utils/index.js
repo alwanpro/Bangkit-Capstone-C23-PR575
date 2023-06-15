@@ -95,7 +95,7 @@ const calculateNutriscore = () => {
       results.forEach(async (result) => {
         const nutriscore = nutriScore.calculateClass(
           {
-            energy: result.calorie,
+            energy: result.calorie * 4.18,
             fibers: result.fibers,
             fruit_percentage: 0,
             proteins: result.protein,

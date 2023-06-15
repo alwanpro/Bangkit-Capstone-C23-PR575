@@ -6,3 +6,4 @@
 4. Copy environment variables into `.env`
 5. Install dependencies with `yarn install`
 6. Run the server `yarn start`
+7. Run `node utils/migrations.js` to add new foods data from csv
