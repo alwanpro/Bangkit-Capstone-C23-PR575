@@ -163,7 +163,7 @@ const getConsumptionHistory = async (req, res) => {
       userId,
     });
 
-    const history = consumptions.reduce((acc, curr) => {
+    const rawHistory = consumptions.reduce((acc, curr) => {
       const targetTimezone = 'Asia/Bangkok';
       const timestamp = curr.created_at;
       const utc7Timestamp = moment(timestamp).tz(targetTimezone).format();
@@ -177,6 +177,13 @@ const getConsumptionHistory = async (req, res) => {
 
       return acc;
     }, {});
+
+    const history = Object.keys(rawHistory).map((date) => {
+      return {
+        date,
+        consumptions: rawHistory[date],
+      };
+    });
 
     return res.status(200).json({
       status: 'success',

@@ -13,6 +13,16 @@ const getUsersByEmail = async (email) => {
   return rows[0];
 };
 
+const getUsersById = async (userId) => {
+  const { rows } = await query(
+    'SELECT name, email FROM users WHERE id = $1 LIMIT 1',
+    [userId]
+  );
+
+  if (rows.length == 0) return null;
+  return rows[0];
+};
+
 const addUser = async (user) => {
   const { name, email, password } = user;
   const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -83,4 +93,5 @@ export {
   updateProfile,
   createProfile,
   addUser,
+  getUsersById,
 };

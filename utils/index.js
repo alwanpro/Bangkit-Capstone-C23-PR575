@@ -75,7 +75,6 @@ const weightCategory = async (userData) => {
 };
 
 const getAge = async (dateString) => {
-  console.log(dateString);
   let today = new Date();
   let birthDate = new Date(dateString);
   let age = today.getFullYear() - birthDate.getFullYear();
@@ -123,7 +122,6 @@ const calculateNutriscore = () => {
           ]
         );
       });
-      console.log(results);
 
       return;
     });

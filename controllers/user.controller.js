@@ -224,13 +224,17 @@ const getUserProfile = async (req, res) => {
   try {
     const { userId } = req.user;
 
-    const userProfile = await userService.getUserProfile(userId);
+    const [userProfile, userAuth] = await Promise.all([
+      userService.getUserProfile(userId),
+      userService.getUsersById(userId),
+    ]);
 
     if (userProfile) {
       return res.status(200).json({
         status: 'success',
         message: 'fetch user data success',
         data: {
+          ...userAuth,
           ...userProfile,
           age: await getAge(userProfile.birth_date),
         },
