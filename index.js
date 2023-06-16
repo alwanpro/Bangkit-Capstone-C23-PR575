@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   res.json({ message: 'ok' });
 });
 
+app.get('/docs', (req, res) => {
+  res.redirect('https://documenter.getpostman.com/view/27921988/2s93shypMN');
+});
+
 app.use('/api', router);
 /* Error handler middleware */
 app.use((err, req, res, next) => {
