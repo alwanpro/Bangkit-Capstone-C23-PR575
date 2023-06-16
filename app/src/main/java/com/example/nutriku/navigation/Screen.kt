@@ -16,7 +16,7 @@ sealed class Screen (val route: String) {
     object ResultScan : Screen("result_scan")
     object Saved : Screen("saved_scan")
 
-    object WebView : Screen("saved_scan/{texturl}/{imgurl}") {
-        fun createRoute(texturl: String, imgurl: String) = "saved_scan/$texturl/$imgurl"
+    object WebView : Screen("webview/{id}") {
+        fun createRoute(id: Int) = "webview/$id"
     }
 }

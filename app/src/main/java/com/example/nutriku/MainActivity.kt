@@ -48,6 +48,8 @@ import com.example.nutriku.screen.HomeScreen
 import com.example.nutriku.screen.LoginScreen
 import com.example.nutriku.screen.ProfileScreen
 import com.example.nutriku.screen.SignUpScreen
+import com.example.nutriku.screen.WebViewCompose
+import com.example.nutriku.screen.WebViewViewModel
 import com.example.nutriku.screen.scan.ContentScan
 import com.example.nutriku.screen.scan.SelectActivity
 import com.example.nutriku.ui.theme.NutrikuTheme
@@ -187,6 +189,14 @@ fun NutrikuApp(
 //                val context = LocalContext.current
 //                context.startActivity(Intent(context, SelectActivity::class.java))
                 // SelectActivityCompose(navController = navController)
+            }
+            composable(
+                route = Screen.WebView.route,
+                arguments = listOf(navArgument("id") { type = NavType.IntType } )
+            ) {
+                val id = it.arguments?.getInt("id") ?: 1
+                val webViewViewModel = WebViewViewModel(id = id)
+                WebViewCompose(id = id)
             }
 
             //composable(Screen.WebView.route, arguments = listOf(navArgument("texturl") {type = NavType.StringType}, navArgument("imgurl") {type = NavType.StringType}) )

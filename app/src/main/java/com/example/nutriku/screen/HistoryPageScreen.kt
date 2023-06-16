@@ -131,14 +131,14 @@ fun HistoryScreen(
         val historyList by historyScreenViewModel.historyList.collectAsState()
 
         if (historyList.isNotEmpty()) {
-            historyList.map { historyData ->
+            historyList.forEach { historyData ->
                 if(historyData != null) {
                     DateHistory(text = historyData.date.toString())
                     LazyColumn(modifier = modifier
                         .fillMaxSize(),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        items(items = historyData.consumptions, key = {"${historyData.date}_${it?.foodClass}"} ) {consumptionItem ->
+                        items(items = historyData.consumptions, key = {"${it?.createdAt}"} ) {consumptionItem ->
                             CardHistory(data = consumptionItem)
                         }
                     }

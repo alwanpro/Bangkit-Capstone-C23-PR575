@@ -58,6 +58,12 @@ interface ApiService {
     fun getAllArticle() : Call<ArticleListResponse>
 
     @Headers("Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmZhOWIzOS1jY2M2LTRhMzUtYjhkOC1kZTk5OTA5MTRjZWEiLCJlbWFpbCI6InJpZmt5bXV0aGFoaGFyaUBnbWFpbC5jb20iLCJpYXQiOjE2ODY4MDA4NzV9.3JdHQgsaE4xiwCaArIwMTCcPj0UTQPEfgmy0eeOmoLY")
+    @GET("article/{id}")
+    fun getArticle(
+        @Path("id") id : Int
+    ) : Call<ArticleResponse>
+
+    @Headers("Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmZhOWIzOS1jY2M2LTRhMzUtYjhkOC1kZTk5OTA5MTRjZWEiLCJlbWFpbCI6InJpZmt5bXV0aGFoaGFyaUBnbWFpbC5jb20iLCJpYXQiOjE2ODY4MDA4NzV9.3JdHQgsaE4xiwCaArIwMTCcPj0UTQPEfgmy0eeOmoLY")
     @GET("profile")
     fun getUserProfile() : Call<UserResponse>
 

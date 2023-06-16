@@ -56,7 +56,7 @@ fun ArticleScreen(
     ) {
         items(items = articleData, key = {it?.id.toString()} ) {data ->
             ArticleCard(modifier = modifier, articleData = data, onClick = {
-                navController.navigate(Screen.WebView.createRoute(data?.body!!, data.imag ?: data.img!!))
+                navController.navigate(Screen.WebView.createRoute(data?.id?.toInt()!!))
             })
         }
     }
