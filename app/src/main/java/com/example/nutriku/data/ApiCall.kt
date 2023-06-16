@@ -61,11 +61,14 @@ interface ApiService {
     @GET("profile")
     fun getUserProfile() : Call<UserResponse>
 
-    @Multipart
+
+    @FormUrlEncoded
     @Headers("Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmZhOWIzOS1jY2M2LTRhMzUtYjhkOC1kZTk5OTA5MTRjZWEiLCJlbWFpbCI6InJpZmt5bXV0aGFoaGFyaUBnbWFpbC5jb20iLCJpYXQiOjE2ODY4MDA4NzV9.3JdHQgsaE4xiwCaArIwMTCcPj0UTQPEfgmy0eeOmoLY")
     @POST("consumption")
     fun postFoodsConsumption(
-        @Part foodClass : MultipartBody.Part,
-        @Part amount : MultipartBody.Part
+        @Field("food_class") foodClass : String,
+        @Field("amount") amount : Int,
+        @Field("file") file : String
+
     ) : Call<PostFoodsConsumptionResponse>
 }

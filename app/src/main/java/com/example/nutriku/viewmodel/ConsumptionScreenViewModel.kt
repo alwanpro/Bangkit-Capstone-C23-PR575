@@ -1,7 +1,10 @@
 package com.example.nutriku.viewmodel
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.util.Base64
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,6 +24,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.ByteArrayOutputStream
 import java.io.File
 
 
@@ -36,10 +40,20 @@ class ConsumptionScreenViewModel(val foodclass: String): ViewModel() {
     fun postFoodsConsumption(imgPath : String, foodclass: String, amount: String, onCallBack: () -> Unit) {
 //        viewModelScope.launch {
 
-            val file : File = File(imgPath)
-        val imagePart = MultipartBody.Part.createFormData(name = "file", filename = file.name, body = file.asRequestBody())
-        val foodclassPart = MultipartBody.Part.createFormData("food_class", foodclass)
-        val amountPart = MultipartBody.Part.createFormData("amount", amount)
+        val file : File = File(imgPath)
+//        val imagePart = MultipartBody.Part.createFormData(name = "file", filename = file.name, body = file.asRequestBody())
+
+        val bitMap = BitmapFactory.decodeFile(imgPath)
+        val baos = ByteArrayOutputStream()
+        bitMap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val byteArray = baos.toByteArray()
+        val encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT)
+        Log.d("ConsumptionScreen", "Encoded Image: $encodedImage")
+        Log.d("ConsumptionScreen", "foodclass: $foodclass")
+        Log.d("ConsumptionScreen", "amount: ${selectedAmount.value}")
+
+//        val foodclassPart = MultipartBody.Part.createFormData("food_class", foodclass)
+//        val amountPart = MultipartBody.Part.createFormData("amount", amount)
 
 //            val client = OkHttpClient()
 //            val mediaType = "text/plain".toMediaType()
@@ -64,7 +78,7 @@ class ConsumptionScreenViewModel(val foodclass: String): ViewModel() {
 
 //        viewModelScope.launch {
 //
-            val client = ApiConfig.getApiService().postFoodsConsumption(foodclass, amount)
+            val client = ApiConfig.getApiService().postFoodsConsumption(foodclass, selectedAmount.value ?: 0, encodedImage)
             client.enqueue(object: Callback<PostFoodsConsumptionResponse> {
                 override fun onResponse(
                     call: Call<PostFoodsConsumptionResponse>,
