@@ -1,9 +1,11 @@
 package com.example.nutriku.screen
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,7 +23,13 @@ import androidx.lifecycle.ViewModel
 import com.example.nutriku.component.InputForm
 import com.example.nutriku.component.MainForm
 import com.example.nutriku.component.NutrikuBadge
+import com.example.nutriku.component.TextLink
+import com.example.nutriku.data.ApiConfig
+import com.example.nutriku.data.AuthResponse
 import com.example.nutriku.ui.theme.NutrikuTheme
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier) {
@@ -39,14 +47,39 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             NutrikuBadge(modifier)
         }
         Text(text = "Login")
-        Column(modifier = modifier.fillMaxHeight().padding(bottom = 24.dp),
+        Column(modifier = modifier
+            .fillMaxHeight()
+            .padding(bottom = 24.dp),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             InputForm(formState = loginViewModel.formState, submitText = "Login", onSubmit = { /*TODO*/ })
-            Text(text = "Belum memiliki akun? Buat Akun")
+            Row() {
+                Text(text = "Belum memiliki akun? ")
+                TextLink(modifier = modifier, text = "Buat Akun", onClick = { submitLogin(loginViewModel.formState.username.toString(), loginViewModel.formState.password.toString()) })
+            }
         }
     }
+}
+fun submitLogin(name : String, password : String) {
+    val client = ApiConfig.getApiService().login(name, password)
+    client.enqueue(object: Callback<AuthResponse> {
+        override fun onResponse(
+            call: Call<AuthResponse>,
+            response: Response<AuthResponse>
+        ) {
+            val responseBody = response.body()
+            if (response.isSuccessful && responseBody?.data != null) {
+                // TODO: save token and go to home screen
+            } else {
+                Log.e("LoginScreen", "onFailure: ${responseBody?.message}")
+            }
+        }
+
+        override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+            Log.e("LoginScreen", "Login Error")
+        }
+    })
 }
 
 class LoginViewModel: ViewModel() {

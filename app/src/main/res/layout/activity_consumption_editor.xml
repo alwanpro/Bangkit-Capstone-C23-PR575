@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nutriku.screen.scan.ConsumptionEditorActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/editortotalcalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="20sp"
+        android:textColor="@color/primary"
+        android:text="580 Kcal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/editortotalcalorielabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="16sp"
+        android:text="Total Kalori:"
+        app:layout_constraintBottom_toTopOf="@+id/editortotalcalorie"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/editorimageview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/roundstyle"
+        android:clipToOutline="true"
+        app:srcCompat="@drawable/foods_placeholder" />
+
+    <TextView
+        android:id="@+id/editorfoodclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="24sp"
+        android:text="Batagor"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editorimageview" />
+
+    <TextView
+        android:id="@+id/editoramount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="16sp"
+        android:text="Per 100g"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editorfoodclass" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editoramount">
+
+        <Button
+            android:id="@+id/editorminusbutton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/editorselectedamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginHorizontal="8dp"
+            android:textSize="20sp"
+            android:text="200g" />
+
+        <Button
+            android:id="@+id/editorplusbutton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:text="Kandungan nutrisi:" />
+
+        <TextView
+            android:id="@+id/editornutrisienergi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:text="Energi : 290 Kcal" />
+
+        <TextView
+            android:id="@+id/editornutrisilemak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:text="Lemak : 14.92 g" />
+
+        <TextView
+            android:id="@+id/editornutrisiprotein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:text="Protein : 10.28 g" />
+
+        <TextView
+            android:id="@+id/editornutrisikarbo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:text="Karbohidrat : 29.14 g" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/editorsimpanbutton"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/pillstyle"
+        android:text="Simpan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

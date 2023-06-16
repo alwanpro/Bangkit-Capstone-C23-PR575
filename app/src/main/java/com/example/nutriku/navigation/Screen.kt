@@ -9,4 +9,14 @@ sealed class Screen (val route: String) {
     object Scan : Screen("scan")
     object Explore : Screen("explore")
     object History : Screen("history")
+
+    // scan screen
+    object ScanSelection : Screen("scan_selection")
+    object CalScan : Screen("cal_scan")
+    object ResultScan : Screen("result_scan")
+    object Saved : Screen("saved_scan")
+
+    object WebView : Screen("saved_scan/{texturl}/{imgurl}") {
+        fun createRoute(texturl: String, imgurl: String) = "saved_scan/$texturl/$imgurl"
+    }
 }
