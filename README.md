@@ -7,13 +7,13 @@
 5. Install dependencies
 
 ```diff
-+ yarn install
+yarn install
 ```
 
 6. Start the server
 
 ```diff
-+ yarn start
+yarn start
 ```
 
 7. Run `node utils/migrations.js` to add new foods data from csv
