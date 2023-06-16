@@ -27,7 +27,7 @@ https://github.com/alwanpro/Bangkit-Capstone-C23-PR575/
 
 ### How to run backend (local)
 
-1. Install Node.js, yarn, and PostgreSQL
+1. Install [Node.js](https://nodejs.org/en/download), [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable), and [PostgreSQL](https://www.postgresql.org/download/)
 2. Create new database inside PostgreSQL named `nutriku-dev`
 3. Execute SQL schema script inside `configs/schema.sql` and foods seeds inside `configs/migrations.sql`
 4. Copy `.env.example` into `.env` and configure the environment variables
