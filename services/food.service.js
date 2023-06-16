@@ -208,7 +208,7 @@ const todayCalorie = async (user_id) => {
   if (targetRows.length == 0) return null;
 
   return {
-    daily_calorie: parseInt(dailyCalRows[0]?.daily_calorie) || 0,
+    current: parseInt(dailyCalRows[0]?.daily_calorie) || 0,
     target: parseInt(targetRows[0].target),
   };
 };

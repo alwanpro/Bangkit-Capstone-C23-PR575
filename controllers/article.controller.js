@@ -1,3 +1,5 @@
+import https from 'https';
+
 const articles = [
   {
     id: '1',
@@ -53,16 +55,36 @@ const getArticles = (req, res) => {
   }
 };
 
-const getArticleById = (req, res) => {
+const getArticleById = async (req, res) => {
   const articleId = req.params.id;
 
   const article = articles.find((article) => article.id === articleId);
 
   if (article) {
-    res.json({
-      message: 'Success retrieving article',
-      status: 'success',
-      data: article,
+    https.get(article.body, (response) => {
+      let body = '';
+      let i = 0;
+      response.on('data', async (chunk) => {
+        i++;
+        body += chunk;
+      });
+      response.on('end', async () => {
+        return res.json({
+          message: 'Success retrieving article',
+          status: 'success',
+          data: {
+            ...article,
+            body,
+          },
+        });
+      });
+
+      response.on('error', async () => {
+        return res.status(404).json({
+          message: 'Article not found',
+          status: 'error',
+        });
+      });
     });
   } else {
     res.status(404).json({
