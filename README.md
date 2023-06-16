@@ -23,12 +23,26 @@ A Capstone project focuses on detect food, display food details, and nutri score
 https://github.com/alwanpro/Bangkit-Capstone-C23-PR575/
 ```
 
-## How to run
+## CC
 
-1. Install NodeJS, Yarn, and postgresql
-2. Create new database inside postgresql named `nutriku-dev`
-3. Execute SQL script inside `configs`
-4. Copy environment variables into `.env`
-5. Install dependencies with `yarn install`
-6. Run the server `yarn start`
-7. Run `node utils/migrations.js` to add new foods data from csv
+### How to run backend (local)
+
+1. Install Node.js, yarn, and PostgreSQL
+2. Create new database inside PostgreSQL named `nutriku-dev`
+3. Execute SQL schema script inside `configs/schema.sql` and foods seeds inside `configs/migrations.sql`
+4. Copy `.env.example` into `.env` and configure the environment variables
+5. Install dependencies
+
+```diff
+yarn install
+```
+
+6. Start the server
+
+```diff
+yarn start
+```
+
+7. Open `http://localhost:8000/docs` to see list of endpoints
+8. Run and configure files inside `node utils/migrations.js` to add new foods data from csv stored inside `docs/data_makanan.csv`
+9. Documentation links: https://documenter.getpostman.com/view/27921988/2s93shypMN
