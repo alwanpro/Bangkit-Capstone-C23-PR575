@@ -1,9 +1,9 @@
 ## How to run
 
-1. Install NodeJS, yarn, and PostgreSQL
-2. Create new database inside postgresql named `nutriku-dev`
-3. Execute SQL script inside `configs`
-4. Copy environment variables into `.env`
+1. Install Node.js, yarn, and PostgreSQL
+2. Create new database inside PostgreSQL named `nutriku-dev`
+3. Execute SQL schema script inside `configs/schema.sql` and foods seeds inside `configs/migrations.sql`
+4. Copy `.env.example` into `.env` and configure the environment variables
 5. Install dependencies
 
 ```diff
@@ -16,7 +16,8 @@ yarn install
 yarn start
 ```
 
-7. Run `node utils/migrations.js` to add new foods data from csv
+7. Open `http://localhost:8000/docs` to see list of endpoints
+8. Run and configure files inside `node utils/migrations.js` to add new foods data from csv stored in `docs/data_makanan.csv`
 
 ## Documentation links:
 
