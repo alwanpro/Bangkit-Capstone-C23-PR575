@@ -45,4 +45,4 @@ yarn start
 
 7. Open `http://localhost:8000/docs` to see list of endpoints
 8. Run and configure files inside `node utils/migrations.js` to add new foods data from csv stored inside `docs/data_makanan.csv`
-9. Documentation links: https://documenter.getpostman.com/view/27921988/2s93shypMN
+9. Documentation [link](https://documenter.getpostman.com/view/27921988/2s93shypMN)
