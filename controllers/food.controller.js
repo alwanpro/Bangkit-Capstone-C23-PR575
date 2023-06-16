@@ -65,8 +65,8 @@ const addConsumption = async (req, res) => {
 
     let imageUrl = '';
 
-    if (req.file) {
-      imageUrl = await uploadFile(req.file, user.userId, data.food_class);
+    if (data.file) {
+      imageUrl = await uploadFile(data.file, user.userId, data.food_class);
     } else {
       imageUrl = (await foodService.getDefaultImage(data.food_class)).image_url;
     }

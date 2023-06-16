@@ -1,13 +1,16 @@
 import { storage } from '../configs/storage.config.js';
 import * as util from 'util';
+import { fileTypeFromBuffer } from 'file-type';
 
 const BUCKET_NAME = 'food-consumptions';
 const bucket = storage.bucket(BUCKET_NAME);
 
 const uploadFile = async (file, userId, foodClass) => {
-  const { originalname, buffer } = file;
+  // const { originalname, buffer } = file;
+  const buffer = Buffer.from(file, 'base64');
+  const { ext: fileExtension } = await fileTypeFromBuffer(buffer);
   const now = new Date();
-  const fileExtension = originalname.split('.').pop();
+  // const fileExtension = originalname.split('.').pop();
   const filePath = `${userId}/${foodClass}_${now.toISOString()}.${fileExtension}`;
 
   const blob = bucket.file(filePath);

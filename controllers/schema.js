@@ -52,6 +52,7 @@ const foodByClassSchema = Joi.object().keys({
 const addConsumptionSchema = Joi.object().keys({
   food_class: Joi.string().required(),
   amount: Joi.number().required(),
+  file: Joi.string(),
 });
 
 const userDataSchema = Joi.object().keys({
