@@ -7,3 +7,7 @@
 5. Install dependencies with `yarn install`
 6. Run the server `yarn start`
 7. Run `node utils/migrations.js` to add new foods data from csv
+
+## Documentation links:
+
+https://documenter.getpostman.com/view/27921988/2s93shypMN
