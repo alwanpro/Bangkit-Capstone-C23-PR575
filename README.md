@@ -6,11 +6,15 @@
 4. Copy environment variables into `.env`
 5. Install dependencies
 
-   yarn install
+```diff
++ yarn install
+```
 
 6. Start the server
 
-   yarn start
+```diff
++ yarn start
+```
 
 7. Run `node utils/migrations.js` to add new foods data from csv
 
